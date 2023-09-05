@@ -1,7 +1,7 @@
 {
-  "name": "@segment/action-destinations",
+  "name": "@syftdata/action-destinations",
   "description": "Destination Actions engine and definitions.",
-  "version": "3.205.2",
+  "version": "3.205.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/segmentio/action-destinations",
@@ -14,7 +14,7 @@
     "package.json"
   ],
   "engines": {
-    "node": "14 || ^18.12"
+    "node": "14 || ^18.12 || 19"
   },
   "engineStrict": true,
   "license": "MIT",
@@ -33,12 +33,14 @@
   "devDependencies": {
     "@types/google-libphonenumber": "^7.4.23",
     "@types/jest": "^27.0.0",
+    "@types/snowflake-sdk": "^1.6.13",
     "@types/ssh2-sftp-client": "^9.0.0",
     "jest": "^27.3.1",
     "nock": "^13.1.4"
   },
   "dependencies": {
     "@amplitude/ua-parser-js": "^0.7.25",
+    "@google-cloud/bigquery": "^7.2.0",
     "@segment/a1-notation": "^2.1.4",
     "@segment/actions-core": "^3.81.2",
     "@segment/actions-shared": "^1.63.2",
@@ -51,6 +53,7 @@
     "google-libphonenumber": "^3.2.31",
     "liquidjs": "^9.37.0",
     "lodash": "^4.17.21",
+    "snowflake-sdk": "^1.8.0",
     "ssh2-sftp-client": "^9.1.0"
   },
   "jest": {

@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing snapshot for actions-bigquery destination: insert action - all fields 1`] = `
+Array [
+  "track",
+  Object {
+    "_id": "c8890e85-a707-4829-b8df-a904e041d3d1",
+    "anonymous_id": "anonId1234",
+    "context": Object {
+      "ip": "8.8.8.8",
+      "library": Object {
+        "name": "analytics.js",
+        "version": "2.11.1",
+      },
+      "locale": "en-US",
+      "location": Object {
+        "city": "San Francisco",
+        "country": "United States",
+        "latitude": 40.2964197,
+        "longitude": -76.9411617,
+        "speed": 0,
+      },
+      "page": Object {
+        "path": "/academy/",
+        "referrer": "",
+        "search": "",
+        "title": "Analytics Academy",
+        "url": "https://segment.com/academy/",
+      },
+      "timezone": "Europe/Amsterdam",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1",
+    },
+    "context_ip": "8.8.8.8",
+    "context_library_name": "analytics.js",
+    "context_library_version": "2.11.1",
+    "context_locale": "en-US",
+    "context_page_path": "/academy/",
+    "context_page_title": "Analytics Academy",
+    "context_page_url": "https://segment.com/academy/",
+    "context_user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1",
+    "event": "Test Event",
+    "properties": Object {
+      "_id": "(tEl6HA@MkZ]",
+      "anonymous_id": "(tEl6HA@MkZ]",
+      "context": Object {
+        "testType": "(tEl6HA@MkZ]",
+      },
+      "context_ip": "(tEl6HA@MkZ]",
+      "context_library_name": "(tEl6HA@MkZ]",
+      "context_library_version": "(tEl6HA@MkZ]",
+      "context_locale": "(tEl6HA@MkZ]",
+      "context_page_path": "(tEl6HA@MkZ]",
+      "context_page_title": "(tEl6HA@MkZ]",
+      "context_page_url": "(tEl6HA@MkZ]",
+      "context_user_agent": "(tEl6HA@MkZ]",
+      "event": "(tEl6HA@MkZ]",
+      "name": "(tEl6HA@MkZ]",
+      "properties": Object {
+        "testType": "(tEl6HA@MkZ]",
+      },
+      "received_at": "2021-02-01T00:00:00.000Z",
+      "sent_at": "2021-02-01T00:00:00.000Z",
+      "timestamp": "2021-02-01T00:00:00.000Z",
+      "user_id": "(tEl6HA@MkZ]",
+    },
+    "received_at": "2023-09-02T13:56:47.337Z",
+    "sent_at": "2023-09-02T13:56:47.337Z",
+    "timestamp": "2023-09-02T13:56:47.337Z",
+    "user_id": "user1234",
+  },
+]
+`;
+
+exports[`Testing snapshot for actions-bigquery destination: insert action - required fields 1`] = `
+Array [
+  "track",
+  Object {
+    "_id": "bfdbc889-0e85-4707-8829-b8dfa904e041",
+    "anonymous_id": "anonId1234",
+    "context": Object {
+      "ip": "8.8.8.8",
+      "library": Object {
+        "name": "analytics.js",
+        "version": "2.11.1",
+      },
+      "locale": "en-US",
+      "location": Object {
+        "city": "San Francisco",
+        "country": "United States",
+        "latitude": 40.2964197,
+        "longitude": -76.9411617,
+        "speed": 0,
+      },
+      "page": Object {
+        "path": "/academy/",
+        "referrer": "",
+        "search": "",
+        "title": "Analytics Academy",
+        "url": "https://segment.com/academy/",
+      },
+      "timezone": "Europe/Amsterdam",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1",
+    },
+    "context_ip": "8.8.8.8",
+    "context_library_name": "analytics.js",
+    "context_library_version": "2.11.1",
+    "context_locale": "en-US",
+    "context_page_path": "/academy/",
+    "context_page_title": "Analytics Academy",
+    "context_page_url": "https://segment.com/academy/",
+    "context_user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1",
+    "event": "Test Event",
+    "properties": Object {
+      "_id": "(tEl6HA@MkZ]",
+      "anonymous_id": "(tEl6HA@MkZ]",
+      "user_id": "(tEl6HA@MkZ]",
+    },
+    "received_at": "2023-09-02T13:56:47.304Z",
+    "sent_at": "2023-09-02T13:56:47.304Z",
+    "timestamp": "2023-09-02T13:56:47.304Z",
+    "user_id": "user1234",
+  },
+]
+`;

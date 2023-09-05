@@ -26,6 +26,13 @@ const action: ActionDefinition<Settings, Payload> = {
       required: false,
       default: { '@path': '$.traits' }
     },
+    context: {
+      type: 'object',
+      required: false,
+      description: 'Context properties to send with the event',
+      label: 'Context properties',
+      default: { '@path': '$.context' }
+    },
     timestamp: {
       type: 'string',
       format: 'date-time',

@@ -20,6 +20,12 @@ export interface Payload {
     [k: string]: unknown
   }
   /**
+   * Context properties to send with the event
+   */
+  context?: {
+    [k: string]: unknown
+  }
+  /**
    * The timestamp of the event
    */
   timestamp: string

@@ -27,6 +27,11 @@ interface CompanyProperty {
   formField?: boolean
 }
 
+interface ContactResponse {
+  id: string
+  properties: Record<string, string>
+}
+
 interface CompanyContactAssociationResponse extends ResponseInfo {
   associations: {
     contacts?: {
@@ -210,7 +215,9 @@ const action: ActionDefinition<Settings, Payload> = {
       allowNull: false
     }
   },
-  perform: async (request, { payload, transactionContext }) => {
+  perform: async (request, data) => {
+    const { payload, transactionContext } = data
+
     // Check if user has mapped the internal property SEGMENT_UNIQUE_IDENTIFIER in other Properties field
     if (payload.properties?.[SEGMENT_UNIQUE_IDENTIFIER]) {
       throw RestrictedPropertyThrowableError
@@ -218,7 +225,17 @@ const action: ActionDefinition<Settings, Payload> = {
 
     // If associateContact field is set to true, check if transactionContext is defined and contact_id is present in TransactionContext
     if (payload.associateContact && !transactionContext?.transaction?.contact_id) {
-      throw MissingIdentityCallThrowableError
+      // try to get the contact_id from the payload
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const rawData = (data as any).rawData
+      const contactEmail = rawData.traits?.email as string
+      if (contactEmail != null) {
+        const contact = await getContact(request, contactEmail)
+        if (contact?.data?.id) {
+          transactionContext?.setTransaction('contact_id', contact.data.id)
+        }
+      }
+      if (!transactionContext?.transaction?.contact_id) throw MissingIdentityCallThrowableError
     }
     const hubspotApiClient: Hubspot = new Hubspot(request, 'companies')
 
@@ -424,6 +441,12 @@ async function upsertCompanyWithRetry(request: RequestClient, upsertCompanyFunct
       throw e
     }
   }
+}
+
+async function getContact(request: RequestClient, email: string) {
+  return request<ContactResponse>(`${HUBSPOT_BASE_URL}/crm/v3/objects/contacts/${email}?idProperty=email`, {
+    method: 'GET'
+  })
 }
 
 export default action

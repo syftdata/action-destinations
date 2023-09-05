@@ -32,6 +32,13 @@ const action: ActionDefinition<Settings, Payload> = {
       description: 'Traits to associate with the group',
       default: { '@path': '$.traits' }
     },
+    context: {
+      type: 'object',
+      required: false,
+      description: 'Context properties to send with the event',
+      label: 'Context properties',
+      default: { '@path': '$.context' }
+    },
     timestamp: {
       type: 'string',
       format: 'date-time',
